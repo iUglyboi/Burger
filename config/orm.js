@@ -1,4 +1,4 @@
-const connnection = require('/.connection.js');
+const connection = require('./connection');
 
 var orm = {
     selectAll: function (callback) {

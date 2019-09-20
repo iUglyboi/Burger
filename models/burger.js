@@ -7,12 +7,12 @@ var burgerBuilder = {
         })
     },
     insertOne: function (burger_name, callback){
-        orm.selectAll(burger_name, function (res){
+        orm.insertOne(burger_name, function (res){
             callback(res);
         })
     },
     updateOne: function (burger_id, callback){
-        orm.selectAll(burger_id, function (res){
+        orm.updateOne(burger_id, function (res){
             callback(res);
         })
     },
