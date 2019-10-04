@@ -1,32 +1,29 @@
 var express = require("express");
+var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
-
-var PORT = process.env.PORT || 3000;
+var path = require("path");
+// var Sequelize = require("sequelize");
 
 var app = express();
+var PORT = process.env.PORT || 8080;
 
-
-app.use(express.static("public"));
-
-app.use(bodyParser.urlencoded({ extended: true }));
-
+var db = require("./models");
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-
-var exphbs = require("express-handlebars");
+app.use(express.static("./public"));
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-
 app.set("view engine", "handlebars");
+app.set("views", path.join(__dirname, "views"));
 
+require("./routes.js")(app);
 
-var routes = require("./controllers/burgers_controller.js");
-
-app.use(routes);
-
-
-app.listen(PORT, function() {
-
-  console.log("Server listening on: http://localhost:" + PORT);
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
