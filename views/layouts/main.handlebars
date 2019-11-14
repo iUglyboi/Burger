@@ -3,56 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <title>GET YOUR FRESH HOT BURGERS HERE!!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <title>Eat The Burger</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/assets/js/burgers.js"></script>
 </head>
 
 <body>
-
-    <div class="container-fluid">
-        <center>
-            <div class="row">
-      
-                <div class="jumbotron">
-                    <h1>Fresh and Hot Burgers Here!</h1>
-                    <p id="howTo">Pick one of the premade burgers in order to eat them. If the premade burgers do not interest you, be sure to just make your own burger! Put your own twist onto it!</p>
-        
-        </center>
-        <br>
-
-        {{{body}}}
-        <br>
-        <br>
-
-        <form action="burger/make" method="POST">
-        <div class="row">
-          <div class="col-md-3"></div>
-          <div class="form-group col-md-6">
-                    <center>
-                        <label for="custom_burger" class="submitText">Start your burger creation here!</label>
-                    </center>
-                    <textarea class="form-control" type="text" columns="6" rows="2" id="custom_burger required value=" name="burger_name"></textarea>
-                </div>
-                <div class="col-md-3 "></div>
-            </div>
-            <center>
-                <button id="submit-button " type="submit " class="btn btn-danger ">Cook my Burger!</button>
-            </center>
-        </form>
-        <br>
-        </div>
-        <footer class="footer">
-      <div class="container">
-          </div>
-    </footer>
+    {{{ body }}}
 </body>
 
 </html>
-
-
-
